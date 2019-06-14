@@ -5,7 +5,7 @@
 ## 二、西瓜的原理是什么
 1. 酷Q Air版是本体 [酷Q-Air官网](https://cqp.cc/t/23253)
 2. CQhttp是酷Q能开发python或者其他版本聊天bot的关键 [Github上的搜索结果](https://github.com/search?q=cqhttp)
-3. [CQhttp-python CQhttp的python版](https://github.com/richardchien/python-cqhttp)
+3. [CQhttp-python](https://github.com/richardchien/python-cqhttp)  CQhttp的python版
 4. [nonebot](https://github.com/richardchien/nonebot):基于 酷Q 的 Python 异步 QQ 机器人框架 [基础教程](https://none.rclab.tk/) [进阶API](https://none.rclab.tk/api.html)
 
 ## 三、西瓜的插件
