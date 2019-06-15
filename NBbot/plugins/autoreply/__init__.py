@@ -1,14 +1,12 @@
-from nonebot import on_natural_language, NLPSession, MessageSegment
+from nonebot import on_natural_language, NLPSession, MessageSegment, get_bot
 import json
 import re
 import jieba
 
 print("读取自动回复关键字")
-# kwf = open('res/kw.json', encoding='utf-8')
 f1 = open('res/Q.json', encoding='utf-8')
 f2 = open('res/A.json', encoding='utf-8')
 f3 = open('res/fdgroups.json', encoding='utf-8')
-# kw = json.loads(kwf.read())
 Qconf = json.load(f1)
 Aconf = json.load(f2)
 groupconf = json.load(f3)
@@ -48,7 +46,6 @@ def wordCut(msg):
     for key, value in Qconf.items():
         kw = value
         res = re.findall(kw, msg)
-        print(res)
         if (len(res)):
             return key
     return False
