@@ -27,15 +27,15 @@ for group in groupconf:
 async def _(session: NLPSession):
     global tmp_dict, ban_dict
     if session.ctx['message_type'] == 'group':  # 判断是否为群信息
-        gid = session.ctx['group_id']           # 获取群号
-        if gid in tmp_dict and session.ctx['raw_message'] == tmp_dict[gid]:
+        gid = session.ctx['group_id']          # 获取群号
+        if gid in groupconf and session.ctx['raw_message'] == tmp_dict[gid]:
             if not ban_dict[gid]:
                 ban_dict[gid] = True
                 await session.send(tmp_dict[gid])
         else:
             ban_dict[gid] = False
-            tmp_str = session.ctx['raw_message']
-            msg_num = wordCut(tmp_str)
+            tmp_dict[gid] = session.ctx['raw_message']
+            msg_num = wordCut(tmp_dict[gid])
             if msg_num:
                 msg = MessageSegment.at(
                     session.ctx['user_id']) + " " + Aconf[msg_num]
