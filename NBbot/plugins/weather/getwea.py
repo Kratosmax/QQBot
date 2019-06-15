@@ -7,18 +7,16 @@ def getweather(city):
     dataJson = requests.get(url+city)
     data = dataJson.json()
     try:
-        print(data["HeWeather6"][0]["basic"])
-        print(data["HeWeather6"][0]["update"])
-        print(data["HeWeather6"][0]["now"])
+        print(data["HeWeather6"][0]["basic"]['location'])
+        return data["HeWeather6"][0]
     except:
         result = "请查询具体城市而非省分"
         return result
-    return data["HeWeather6"][0]
 
 
 def weaList(str):
     list = ''
-    list += str["basic"]['cnty'] + "/" + str["basic"]['admin_area'] + "省/" + str["basic"]['parent_city'] + "市/" + str["basic"]['location'] + "地区/" + '的天气：\n' + \
+    list += str["basic"]['cnty'] + "/" + str["basic"]['admin_area'] + "/" + str["basic"]['parent_city'] + "/" + str["basic"]['location'] + '的天气：\n' + \
         '气温：' + str["now"]['tmp'] + '°C\n' + \
         '天气：' + str["now"]['cond_txt'] + '\n' +\
         '风向：' + str["now"]['wind_dir'] + '--' + str["now"]['wind_sc'] + '级(' + str["now"]['wind_spd'] + "Km/h " + ')' + '\n' +\
