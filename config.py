@@ -4,6 +4,7 @@ SUPERUSERS = {1172616585, 645498469}
 COMMAND_START = {'', '/', '／'}
 HOST = '0.0.0.0'
 PORT = 8080
+#DEBUG = False
 SESSION_EXPIRE_TIMEOUT = timedelta(minutes=3)
 SESSION_RUN_TIMEOUT = timedelta(seconds=15)
 SESSION_RUNNING_EXPRESSION = '西瓜有点蠢，还在处理上一条命令'
